@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/form.css') }}" />
+{% endblock %}
+
+{% block body %}
+<div class="form-container containerrbig">
+    <form class="add-padding form-element" name="form-element" id="form1" enctype="multipart/form-data" method="POST">
+        <span class="form-title add-margin lm-generic large-txt no-emph-txt">{{ name }}</span>
+        {% for elem in elems %}
+        <label class="add-margin lm-generic norm-txt no-emph-txt bold-txt" for="{{ elem.name }}">
+            {% if elem.readableName %}
+            {{ elem.readableName|capitalize }}
+            {% else %}
+            {{ elem.name|capitalize }}
+            {% endif %}
+        </label>
+        <input name="{{ elem.name }}" id="{{ elem.name }}" class="add-margin lm-generic" type="{{ elem.type }}" {% if
+            elem.maxlength %} maxlength="{{ elem.maxlength }}" {% endif %} {% if elem.min %} min="{{ elem.min }}" {%
+            endif %} {% if elem.max %} max="{{ elem.max }}" {% endif %} {% if elem.placeholder %}
+            placeholder="{{ elem.placeholder }}" {% endif %} {% if elem.value %} value="{{ elem.value }}" {% endif %} {%
+            if elem.onchange %} onchange="{{ elem.onchange }}" {% endif %} {% if elem.data %} {{ elem.data }} {% endif
+            %} />
+        {% endfor %}
+        <button class="add-margin lm-generic butt-generic" type="submit">
+            <span class="lm-generic bold-txt norm-txt butt-txt">{{ name }}</span>
+        </button>
+    </form>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{{ url_for('static', filename='src/form.js') }}" defer></script>
+{% block script2 %}{% endblock %}
+{% endblock %}

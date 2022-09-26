@@ -1,0 +1,19 @@
+@import "theme1/constants";
+
+html,
+body {
+    align-items: center;
+}
+
+.form-title {
+    text-align: center;
+}
+
+.form-container {
+    width: 25%;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+}

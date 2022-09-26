@@ -1,0 +1,179 @@
+@import "theme1/constants";
+
+html,
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: $back-color;
+}
+
+.butt-txt {
+  color: $butt-txt;
+  margin: auto;
+}
+
+.light-emph-txt {
+  color: $light-txt-color;
+}
+
+.no-emph-txt {
+  color: $norm-txt-color;
+}
+
+.reg-emph-txt {
+  color: $pri-color;
+}
+
+.semi-emph-txt {
+  color: $pri-color-semi-bold;
+}
+
+.bold-emph-txt {
+  color: $pri-color-bold;
+}
+
+.mini-txt {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.norm-txt {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.semi-large-txt {
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.large-txt {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.add-margin {
+  margin: 5px;
+}
+
+.add-padding {
+  padding: 5px;
+}
+
+.bold-txt {
+  font-weight: bold;
+}
+
+a {
+
+  &:link,
+  &:visited {
+    color: $pri-color;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $pri-color-semi-bold;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+a[disabled] {
+  pointer-events: none;
+}
+
+.panel {
+  width: 100%;
+}
+
+.container {
+  border: 1px solid $pri-border;
+  background-color: $front-color;
+}
+
+.containerrbig {
+  border: 1px solid $pri-border;
+  background-color: $front-color;
+  border-radius: 24px;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 0;
+  height: $top-panel-height;
+  z-index: 3;
+}
+
+.butt-generic {
+  border: none;
+  background-color: $butt-color;
+  height: 32px;
+  transition: 0.2s;
+
+  display: flex;
+  align-items: center;
+
+  // -webkit-transform-style: preserve-3d;
+  // -webkit-backface-visibility: hidden;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $pri-color-semi-bold;
+  }
+
+  &:active {
+    background-color: $pri-color-bold;
+  }
+}
+
+* {
+  font-family: $def-font;
+}
+
+.lm-generic {
+  border-radius: 16px;
+}
+
+input {
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: $inp-cursor;
+  vertical-align: middle;
+  background-color: $inp-back;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  border: 1px solid $pri-border;
+  outline: none;
+  transition: border 1s;
+
+  &:focus {
+    background-color: #f1f1f1;
+  }
+}
+
+textarea {
+  resize: none;
+  height: 30px;
+  font-size: 14px;
+  line-height: 20px;
+  vertical-align: middle;
+
+  color: $inp-cursor;
+  padding: 5px 12px;
+  border: 1px solid $pri-border;
+
+  &:focus {
+    background-color: #f8f8f8;
+  }
+}

@@ -1,0 +1,30 @@
+<div class="grid-item">
+    {% block header %}{% endblock %}
+    <div hidden>{{ id }}</div>
+    <div class="carousel">
+        {% if images|length != 1 %}
+        <button class="carousel-button prev" onclick="changeSlide(event, -1)">&#8678;</button>
+        <button class="carousel-button next" onclick="changeSlide(event, 1)">&#8680;</button>
+        {% endif %}
+        <ul>
+            {% for image in images %}
+            {% if loop.index0 %}
+            <li class="slide">
+                <img src="{{ image }}">
+            </li>
+            {% else %}
+            <li class="slide" data-active>
+                <img src="{{ image }}">
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="lm-generic name">
+        <span class="lm-generic bold-txt norm-txt">{{ name }}</span>
+    </div>
+    <div class="lm-generic price">
+        <span class="lm-generic bold-txt norm-txt">{{ price }}</span>
+    </div>
+    {% block contents %}{% endblock%}
+</div>

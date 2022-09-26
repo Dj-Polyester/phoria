@@ -1,0 +1,139 @@
+@font-face {
+  font-family: Roboto;
+  src: url("/static/fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("/static/fonts/Roboto/Roboto-Bold.ttf");
+  font-weight: bold;
+}
+
+div[hidden] {
+  display: none;
+}
+
+.grid-container {
+  position: absolute;
+  top: 60px;
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #cccccc;
+}
+
+@media screen and (max-width: 1000px) {
+  .grid-container {
+    -ms-grid-columns: 100vw;
+        grid-template-columns: 100vw;
+  }
+  .grid-item {
+    width: 100vw;
+    height: 100vw;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .grid-container {
+    -ms-grid-columns: (25vw)[4];
+        grid-template-columns: repeat(4, 25vw);
+  }
+  .grid-item {
+    width: 25vw;
+    height: 25vw;
+  }
+}
+
+.grid-item > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.carousel {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  -webkit-transition: 200ms opacity ease-in-out;
+  transition: 200ms opacity ease-in-out;
+}
+
+.slide[data-active] {
+  opacity: 1;
+}
+
+.slide > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.carousel-button {
+  position: absolute;
+  background: none;
+  border: none;
+  z-index: 2;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.carousel-button:focus,
+.carousel-button:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:focus {
+  outline: 1px solid black;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.name > span {
+  text-overflow: ellipsis;
+}
+
+.stock > input,
+.no-items-add > input {
+  width: 6ch;
+}
+
+.add-to-cart > button {
+  width: 75%;
+  height: 100%;
+}
+/*# sourceMappingURL=mainpage.css.map */

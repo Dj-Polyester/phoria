@@ -1,0 +1,14 @@
+{% extends 'product_tmp.html' %}
+
+{% block header %}
+<div class="delete-item" onclick="onDelete(event)">
+    <span class="lm-generic bold-txt norm-txt">X</span>
+</div>
+{% endblock %}
+{% block contents %}
+<div class="lm-generic stock">
+    <span class="lm-generic norm-txt">Items in stock:</span>
+    <input type="number" value="{{ itemsInStock }}" placeholder="1" class="add-margin lm-generic" maxlength="2" min="0"
+        max="99" onchange="onStockChange(event)">
+</div>
+{% endblock%}

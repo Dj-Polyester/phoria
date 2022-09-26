@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/mainpage.css') }}" />
+{% endblock %}
+
+{% block body %}
+<header class="container">
+    {% for link in links %}
+    <a class="add-margin bold-txt mini-txt" href="{% if link.disabled %} # {% else %} {{ link.href }} {% endif %}" {% if
+        link.onclick %} onclick="{{ link.onclick }}" {% endif %}>{{ link.name }}</a>
+    {% endfor %}
+</header>
+<div class="grid-container">
+    {% for product in products %}
+    {{ product|safe }}
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{{ url_for('static', filename='src/product.js') }}" defer></script>
+{% block script2 %}{% endblock %}
+{% endblock %}
